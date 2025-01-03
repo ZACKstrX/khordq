@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    return view('auth.login');
 });
+
+Route::get('/exemple', function (){
+    return view('auth.layouts.default');
+});
+
+Route::get("/login",[AuthManager::class, "login"]);
+
+Route::get("/test_array",[ClientController::class, "show"]);
