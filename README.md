@@ -1,7 +1,8 @@
-# Zwikat
+# ZACKstrX
 ## sub
- ds,fsdfsdfsdfs sfdfhnsdvgfjsd
+first project
+ 
 
  ```bash
- npm install
+ npm ZWEKT
 ```

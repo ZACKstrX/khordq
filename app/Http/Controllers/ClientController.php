@@ -45,6 +45,14 @@ class ClientController extends Controller
                 "grape"
         ];
 
+        
+        $array = [
+            "banana" => 1,
+            "apple" => 2,
+            "orange" => 3,
+            "grape" => 4
+            ];
+
 
 
         // create arry  has list client
