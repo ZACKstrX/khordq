@@ -31,9 +31,7 @@ class ClientController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
+   
     public function show(Client $client)
     {
             // give me array of numbre  
@@ -60,7 +58,7 @@ class ClientController extends Controller
 
      
      
-        return view('AfficheListClient', [ "client" => $clients]);
+        return view('AfficheListClient', [ ]);
 
  
     }
