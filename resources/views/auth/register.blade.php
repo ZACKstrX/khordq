@@ -36,7 +36,7 @@ body {
   
       <div class="form-floating">
         <input type="text" class="form-control" id="floatingInput" placeholder="Enter name">
-        <label for="floatingInput">Email address</label>
+        <label for="floatingInput">Enter name</label>
       </div>
 
       <div class="form-floating">
