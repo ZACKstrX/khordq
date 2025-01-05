@@ -13,11 +13,5 @@ class AuthManager extends Controller
         return view('auth.login');
     }
 
-    function haaa()
-    {
-
-        return"haaa";
-    }
-
     function loginPost(Request $request) {}
 }
