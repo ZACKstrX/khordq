@@ -24,5 +24,6 @@ class AuthManager extends Controller
             return redirect()->intended(route("home"));
         }
         return redirect("login")
+        ->with("error ! ","Invalid Email or Password");
     }
-}
+    }
