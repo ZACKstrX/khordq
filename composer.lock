@@ -4,8 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89ef30d8b0d976566bda7189c381dafc",
+    "content-hash": "7ddad7481aeba8639216b5704a550320",
     "packages": [
+        {
+            "name": "adev/lrc",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adilelkhalloufi/lrc.git",
+                "reference": "06a711bd3a25a0f99fbec629abb908d820390db0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adilelkhalloufi/lrc/zipball/06a711bd3a25a0f99fbec629abb908d820390db0",
+                "reference": "06a711bd3a25a0f99fbec629abb908d820390db0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lrc\\LRCServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lrc\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "adil elkhalloufi",
+                    "email": "adilelkhalloufi@gmail.com"
+                }
+            ],
+            "description": "A package to generate column constants for Laravel models",
+            "homepage": "https://adev.ma/",
+            "keywords": [
+                "columns",
+                "constants"
+            ],
+            "support": {
+                "issues": "https://github.com/adilelkhalloufi/lrc/issues",
+                "source": "https://github.com/adilelkhalloufi/lrc/tree/v2.0.2"
+            },
+            "time": "2025-01-05T17:41:15+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.12.1",

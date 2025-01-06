@@ -32,36 +32,12 @@ Route::get("/register",[AuthManager::class, "register"])
 Route::post("register",[AuthManager::class, "registerPost"])
 ->name("register.Post");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 route::get("/fournisseur",[FournisseurController::class , "ShowPageFournisseur"]);
+
+route::post("fournisseur",[FournisseurController::class, "create"])
+->name("fournisseur.create");
+
+
 
 
 
