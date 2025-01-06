@@ -28,10 +28,11 @@ class AuthManager extends Controller
         ->with("error ! ","Invalid Email or Password");
     }
         function register(){
+            
             return view('auth.register');
         }
         function registerPost(Request $request){
-            $request->validation([
+            $request->validate([
                 'name' => 'required',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:8',

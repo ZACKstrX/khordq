@@ -30,32 +30,37 @@ body {
 @endsection
 @section("content")
 <main class="form-signin w-100 m-auto">
-    <form>
+    <form method="POST" action = "{{route("register.Post")}}">
       <img class="mb-4" src="{{asset("assets\img\logo.png")}}" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Create your account </h1>
   
       <div class="form-floating">
         <input type="text" class="form-control" id="floatingInput" placeholder="Enter name">
-        <label for="floatingInput">Enter name</label>
+        <label for="floatingInput">Full name</label>
       </div>
+
+        @error('fullname')
+          <span class ="text-danger">{{ $message }}</span>
+          @enderror
 
       <div class="form-floating">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Email address</label>
       </div>
+       @error('email')
+          <span class ="text-danger">{{ $message }}</span>
+          @enderror
+      
       <div class="form-floating">
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
-  
-      <div class="form-check text-start my-3">
-        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          Remember me
-        </label>
-      </div>
-      <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+        @error('Password')
+          <span class ="text-danger">{{ $message }}</span>
+         @enderror
+      
+      <button class="btn btn-primary w-100 py-2" type="submit">Register</button>
+      <p class="mt-5 mb-3 text-body-secondary">&copy; 2025</p>
     </form>
   </main>
   @endsection
