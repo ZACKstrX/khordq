@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\FournisseurController;
+use App\Models\Fournisseur;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +31,39 @@ Route::get("/register",[AuthManager::class, "register"])
 
 Route::post("register",[AuthManager::class, "registerPost"])
 ->name("register.Post");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+route::get("/fournisseur",[FournisseurController::class , "ShowPageFournisseur"]);
+
+
+
+
+

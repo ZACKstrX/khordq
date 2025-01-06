@@ -30,32 +30,33 @@ body {
 @endsection
 @section("content")
 <main class="form-signin w-100 m-auto">
-    <form method="POST" action = "{{route("register.Post")}}">
+    <form method="POST" action="{{route("register.Post")}}">
+      @csrf
       <img class="mb-4" src="{{asset("assets\img\logo.png")}}" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Create your account </h1>
-  
-      <div class="form-floating">
-        <input type="text" class="form-control" id="floatingInput" placeholder="Enter name">
-        <label for="floatingInput">Full name</label>
+ 
+       <div class="form-floating">
+        <input name="name" id="name" type="text" class="form-control"   placeholder="Enter name">
+        <label for="name">Full name</label>
       </div>
 
-        @error('fullname')
+        @error('name')
           <span class ="text-danger">{{ $message }}</span>
-          @enderror
+        @enderror
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
+        <input name="email" id="email" type="email" class="form-control"  placeholder="name@example.com">
+        <label for="email">Email address</label>
       </div>
        @error('email')
           <span class ="text-danger">{{ $message }}</span>
           @enderror
       
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+        <input name="password" id="password"  type="password" class="form-control"  placeholder="Password">
+        <label for="password">Password</label>
       </div>
-        @error('Password')
+        @error('password')
           <span class ="text-danger">{{ $message }}</span>
          @enderror
       
