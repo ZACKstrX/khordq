@@ -13,7 +13,7 @@ class FournisseurController extends Controller
     }
 
 
-    function create(Request $request)
+    public function create(Request $request)
     {
          $request->validate([
             'firstname' => 'required',

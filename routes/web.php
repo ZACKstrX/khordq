@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\clientAuth;
 use App\Http\Controllers\FournisseurController;
+use App\Http\Controllers\ResturantController;
 use App\Models\Fournisseur;
+use App\Models\resturant;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +36,49 @@ Route::get("/register",[AuthManager::class, "register"])
 Route::post("register",[AuthManager::class, "registerPost"])
 ->name("register.Post");
 
-route::get("/fournisseur",[FournisseurController::class , "ShowPageFournisseur"]);
 
-route::post("fournisseur",[FournisseurController::class, "create"])
-->name("fournisseur.create");
+
+
+route::get("fournisseur",[FournisseurController::class , "ShowPageFournisseur"]);
+
+route::post("fournisseur",[FournisseurController::class, "create"])->name("fournisseur.create");
+
+
+route::get("client",[clientAuth::class, "ShowClient"]);
+route::post("client",[clientAuth::class, "create"])->name("client.create");
+
+
+route::get("resturant",[ResturantController::class, "show"]);
+route::post("resturant",[ResturantController::class, "create"])->name("resturant.Post");
+
+
+route::post("resturant",function (Request $request){
+    $request->validate([
+        'resturant_name'=>'required',
+        'speciality'=>'required',
+        'location'=>'required',
+        'number'=>'required'
+    ]);
+
+    $resturant = resturant::create([
+        'resturant_name'=>$request->resturant_name,
+        'speciality'=>$request->speciality,
+        'location'=>$request->location,
+        'number'=>$request->number
+    ]);
+
+    return redirect("ThankYou");
+
+})->name("resturant.Post");
+
+
+
+
+
+route::get("ThankYou",function(){
+    return view('ThankYouView');
+});
+
 
 
 

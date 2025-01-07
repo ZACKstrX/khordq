@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create('resturants', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('lastName')->nullable();
-            $table->integer('age')->min(1)->max(160)->default(18);
-            $table->dateTime('birthDay')->nullable();
-         
+            $table->string('resturant_name')->nullable();
+            $table->string('speciality')->nullable();
+            $table->string('location')->nullable();
+            $table->string('number')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('resturants');
     }
 };
