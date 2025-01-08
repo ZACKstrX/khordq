@@ -30,4 +30,15 @@ class FournisseurController extends Controller
             'age' => $request->age
         ]);
     }
+
+    public function showlist(){
+        $fournisseurs = Fournisseur::all();
+
+        return view("fournisseur.FournisseurList",[
+            "four"=>$fournisseurs ,
+        ]);
+
+    }
+
 }
+

@@ -13,7 +13,6 @@ class Fournisseur extends Model
         'phone_number',
         'age',
         'email',
-        'password',
     ];
 
 

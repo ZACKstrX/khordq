@@ -52,26 +52,24 @@ route::get("resturant",[ResturantController::class, "show"]);
 route::post("resturant",[ResturantController::class, "create"])->name("resturant.Post");
 
 
-route::post("resturant",function (Request $request){
-    $request->validate([
-        'resturant_name'=>'required',
-        'speciality'=>'required',
-        'location'=>'required',
-        'number'=>'required'
-    ]);
+// route::post("resturant",function (Request $request){
+//     $request->validate([
+//         'resturant_name'=>'required',
+//         'speciality'=>'required',
+//         'location'=>'required',
+//         'number'=>'required'
+//     ]);
 
-    $resturant = resturant::create([
-        'resturant_name'=>$request->resturant_name,
-        'speciality'=>$request->speciality,
-        'location'=>$request->location,
-        'number'=>$request->number
-    ]);
+//     $resturant = resturant::create([
+//         'resturant_name'=>$request->resturant_name,
+//         'speciality'=>$request->speciality,
+//         'location'=>$request->location,
+//         'number'=>$request->number
+//     ]);
 
-    return redirect("ThankYou");
+//     return redirect("ThankYou");
 
-})->name("resturant.Post");
-
-
+// })->name("resturant.Post");
 
 
 
@@ -79,10 +77,6 @@ route::get("ThankYou",function(){
     return view('ThankYouView');
 });
 
+route::get("ListResturant",[ResturantController::class ,"list"]);
 
-
-
-
-
-
-
+route::get("FournisseurList",[FournisseurController::class,"showlist"]);

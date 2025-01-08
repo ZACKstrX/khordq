@@ -48,7 +48,7 @@ class AuthManager extends Controller
 
  
 
-        $user = new User();
+        $user = new User(); // not understood enaugh yet
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;

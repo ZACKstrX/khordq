@@ -8,8 +8,6 @@ class clientAuth extends Controller
 {
     public function ShowClient()
     {
-        return view("auth.Client.client");
+        return view("Client");
     }
-
-
 }
