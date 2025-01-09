@@ -14,7 +14,8 @@
                     <td>{{$resturant->resturant_name}}</td>
                     <td>{{$resturant->speciality}}</td>
                     <td>{{$resturant->location}}</td>
- 
+                    <td>{{$resturant->number}}</td>
+
                     
                 </tr>
             @endforeach
