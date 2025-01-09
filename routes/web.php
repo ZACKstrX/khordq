@@ -49,7 +49,7 @@ route::post("client",[clientAuth::class, "create"])->name("client.create");
 
 
 route::get("resturant",[ResturantController::class, "show"]);
-route::post("resturant",[ResturantController::class, "create"])->name("resturant.Post");
+route::post("resturant",[ResturantController::class, "create"]);
 
 
 // route::post("resturant",function (Request $request){

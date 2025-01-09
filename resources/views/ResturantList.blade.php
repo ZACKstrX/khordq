@@ -1,7 +1,6 @@
 <div>
     <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
-    <h1>{{$zaki}}</h1>
-    {{$adil}}
+ 
     <table border="1">
         <thead>
             <tr><th>Restaurant Name</th>
@@ -15,8 +14,8 @@
                     <td>{{$resturant->resturant_name}}</td>
                     <td>{{$resturant->speciality}}</td>
                     <td>{{$resturant->location}}</td>
-                    <td>{{$resturant->number}}</td>
-
+ 
+                    
                 </tr>
             @endforeach
         </tbody>

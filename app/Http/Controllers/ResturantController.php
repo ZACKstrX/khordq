@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\resturant;
+use App\Models\Resturant as ModelsResturant;
 use Illuminate\Http\Request;
 
 class ResturantController extends Controller
@@ -27,8 +28,12 @@ class ResturantController extends Controller
             'location' => $request->location,
             'number' => $request->number
         ]);
-
-        return redirect("ThankYou");
+        
+        $resturants = resturant::all();
+        
+        return view('ResturantList',[
+            "data" => $resturants,
+        ]);
 
     }
     public function list(){
