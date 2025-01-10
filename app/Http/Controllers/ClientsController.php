@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ClientsController extends Controller
 {
 
-    public function ShowSignIn(){
+    public function ShowSignup(){
         return view('Clients');
 
     }

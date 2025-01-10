@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Dear Client</title>
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -12,7 +12,7 @@
     </head>
     <body >
         <div class="container d-flex justify-content-center align-items-center min-vh-100 " >
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation" novalidate methode="POST" action="/signup">
                 <h1 class="d-flex r col-md-4 ">Please Sign-Up</h1>
                 <div class="row g-3  d-flex gap-3">     
                 <div class="col-md-4">
@@ -32,9 +32,9 @@
 
                 <div class="row g-3  d-flex gap-3">
                 <div class="col-md-4">
-                    <label for="validationCustomEmail" class="form-label">Email</label>
+                    <label for="validationCustomEmail" class="form-label">Email</label><!--you didnt complete it yet-->
                     <div class="input-group has-validation">
-                      <input name = "email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                      <input name = "email" type="email" class="form-control" id="email" placeholder="name@example.com" required>
                       <div class="invalid-feedback">
                         Please Type your Email.
                       </div>
@@ -43,10 +43,10 @@
                 </div>
                 <div class="col-md-3">
                   <label for="validationCustom04" class="form-label">Class</label>
-                  <select class="form-select" id="validationCustom04" required>
+                  <select name="class" class="form-select" id="validationCustom04" required>
                     <option selected disabled value="">Choose...</option>
-                    <option>Free</option>
-                    <option>Premium</option>
+                    <option value="free">Free</option>
+                    <option value="premium">Premium</option>
                   </select>
                   <div class="invalid-feedback">
                     Please select a valid state.
@@ -57,7 +57,7 @@
                 <div class="col-12">
                     
                     <label for="validationCustomEmail" class="form-label">Birthday</label>
-                    <input type="text" class="form-control datepicker w-auto" placeholder="Pick a Date">
+                    <input name="birthday" id="birthday" type="text" class="form-control datepicker w-auto" placeholder="Pick a Date">
                     <div class="form-check">
                     <div class="invalid-feedback">
                       Please Select your birthday
@@ -67,7 +67,7 @@
 
 
                 <div class="col-12">
-                  <button class="btn btn-primary" type="submit">Submit form</button>
+                  <button class="btn btn-primary" type="submit">Sign Up</button>
                 </div>
               </form>
 

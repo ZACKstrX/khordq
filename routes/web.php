@@ -77,4 +77,5 @@ route::get("ListResturant",[ResturantController::class ,"list"]);
 
 route::get("FournisseurList",[FournisseurController::class,"showlist"]);
 
-route::get("client",[ClientsController::class,"ShowSignIn"]);
+route::get("client",[ClientsController::class,"ShowSignup"]);
+route::post("signup",[ClientsController::class,"create"]);
