@@ -43,11 +43,6 @@ route::get("fournisseur",[FournisseurController::class , "ShowPageFournisseur"])
 
 route::post("fournisseur",[FournisseurController::class, "create"])->name("fournisseur.create");
 
-
-route::get("client",[clientAuth::class, "ShowClient"]);
-route::post("client",[clientAuth::class, "create"])->name("client.create");
-
-
 route::get("resturant",[ResturantController::class, "show"]);
 route::post("resturant",[ResturantController::class, "create"]);
 
