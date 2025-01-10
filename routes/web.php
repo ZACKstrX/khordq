@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\clientAuth;
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\FournisseurController;
 use App\Http\Controllers\ResturantController;
 use App\Models\Fournisseur;
@@ -75,3 +76,5 @@ route::get("ThankYou",function(){
 route::get("ListResturant",[ResturantController::class ,"list"]);
 
 route::get("FournisseurList",[FournisseurController::class,"showlist"]);
+
+route::get("client",[ClientsController::class,"ShowSignIn"]);
