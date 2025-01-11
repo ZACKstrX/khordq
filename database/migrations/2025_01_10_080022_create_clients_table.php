@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("first_name")->nullable();
             $table->string("last_name")->nullable();
-            $table->dateTime("birthday")->nullable();
-            $table->boolean("class")->nullable();
+            $table->date("birthday")->nullable();
+            $table->string("class")->nullable();
             $table->timestamps();
         });
     }

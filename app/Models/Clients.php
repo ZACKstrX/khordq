@@ -11,6 +11,9 @@ class Clients extends Model
     'first_name',
     'last_name',
     'birthday',
-    'class'];
+    'class',
+    'sexe',
+    'email'
+];
     use HasFactory;
 }

@@ -17,13 +17,15 @@ class ClientsController extends Controller
         $request->validate([
             'first_name'=>'required',
             'last_name'=>'required',
-            'class'=>'required'
+            'class'=>'required',
+            'birthday' => 'nullable|string'
         ]);
         $Clients = Clients::create([
             'first_name'=>$request->first_name,
             'last_name'=>$request->last_name,
             'birthday'=>$request->birthday,
-            'class'=>$request->class
+            'class'=>$request->class,
+            'email'=>$request->email
         ]);
 
     }
