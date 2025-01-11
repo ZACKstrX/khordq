@@ -18,14 +18,16 @@ class ClientsController extends Controller
             'first_name'=>'required',
             'last_name'=>'required',
             'class'=>'required',
-            'birthday' => 'nullable|string'
+            'birthday' => 'nullable|string',
+            'sexe'=>'required'
         ]);
         $Clients = Clients::create([
             'first_name'=>$request->first_name,
             'last_name'=>$request->last_name,
             'birthday'=>$request->birthday,
             'class'=>$request->class,
-            'email'=>$request->email
+            'email'=>$request->email,
+            'sexe'=>$request->sexe
         ]);
 
     }

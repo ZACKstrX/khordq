@@ -46,16 +46,38 @@
                 </div>
             </div>
             <div class="col-12">
-                <label for="birthday" class="form-label w-auto">Birthday</label>
-                <input name="birthday" id="birthday" type="text" class="form-control datepicker" placeholder="Pick a Date" required>
-                <div class="invalid-feedback">Please select your birthday.</div>
+                <div class="d-flex align-items-center mb-3">
+                    <div>
+                        <label for="birthday" class="form-label">Birthday</label>
+                        <input name="birthday" id="birthday" type="text" class="form-control datepicker w-auto" placeholder="Pick a Date" required>
+                        <div class="invalid-feedback">Please select your birthday.</div>
+                    </div>
 
-            </div>
+                    <div class="ms-4">
+                        <label class="form-label">Gender</label>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sexe" id="male" value="0" required>
+                                <label class="form-check-label" for="male">
+                                    Male
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sexe" id="female" value="1" required>
+                                <label class="form-check-label" for="female">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
             <div class="col-12">
                 <button class="btn btn-primary" type="submit">Sign Up</button>
             </div>
         </form>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -63,13 +85,12 @@
 
     <script>
         $(document).ready(function () {
-            // Initialize datepicker with year navigation
             $('#birthday').datepicker({
-                format: 'yyyy/mm/dd', // Date format
-                endDate: '0d', // Prevent selecting future dates
-                autoclose: true, // Close picker after selecting a date
-                startView: 2, // Show decade view (for easier year selection)
-                todayHighlight: true // Highlight the current date
+                format: 'yyyy/mm/dd', 
+                endDate: '0d', 
+                autoclose: true, 
+                startView: 2,
+                todayHighlight: true 
             });
         });
     </script>
