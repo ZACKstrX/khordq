@@ -19,22 +19,35 @@
                 <div class="col-md-4">
                     <label for="first_name" class="form-label">First name</label>
                     <input name="first_name" type="text" class="form-control" id="first_name" placeholder="First Name..." required>
-                    <div class="valid-feedback">Looks good!</div>
+                   
+                    @error('first_name')
+                    <span class ="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
+
+
                 <div class="col-md-4">
                     <label for="last_name" class="form-label">Last name</label>
                     <input name="last_name" type="text" class="form-control" id="last_name" placeholder="Last Name..." required>
-                    <div class="valid-feedback">Looks good!</div>
+            
+                    @error('last_name')
+                    <span class ="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
+
             <div class="row g-3 d-flex gap-3">
                 <div class="col-md-4">
                     <label for="email" class="form-label">Email</label>
                     <div class="input-group has-validation">
                         <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                        <div class="invalid-feedback">Please type your email.</div>
                     </div>
+                    @error('email')
+                    <span class ="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
+
+
                 <div class="col-md-3">
                     <label for="class" class="form-label">Class</label>
                     <select name="class" class="form-select" id="class" required>
@@ -42,16 +55,23 @@
                         <option value="free">Free</option>
                         <option value="premium">Premium</option>
                     </select>
-                    <div class="invalid-feedback">Please select a valid class.</div>
+                    @error('class')
+                    <span class ="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
             </div>
+
+
             <div class="col-12">
                 <div class="d-flex align-items-center mb-3">
                     <div>
                         <label for="birthday" class="form-label">Birthday</label>
                         <input name="birthday" id="birthday" type="text" class="form-control datepicker w-auto" placeholder="Pick a Date" required>
-                        <div class="invalid-feedback">Please select your birthday.</div>
+                        @error('birthday')
+                        <span class ="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
+
 
                     <div class="ms-4">
                         <label class="form-label">Gender</label>
@@ -69,6 +89,9 @@
                                 </label>
                             </div>
                         </div>
+                        @error('sexe')
+                    <span class ="text-danger">{{ $message }}</span>
+                    @enderror
                     </div>
                 </div>
             </div> 

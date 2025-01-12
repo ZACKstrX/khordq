@@ -15,10 +15,11 @@ class ClientsController extends Controller
 
     public function create(Request $request){
         $request->validate([
-            'first_name'=>'required',
-            'last_name'=>'required',
+            'first_name'=>'required|min:4',
+            'last_name'=>'required|min:4',
+            'email'=>'required',    
             'class'=>'required',
-            'birthday' => 'nullable|string',
+            'birthday' => 'required|nullable|string',
             'sexe'=>'required'
         ]);
         $Clients = Clients::create([
