@@ -79,3 +79,4 @@ route::get("FournisseurList",[FournisseurController::class,"showlist"]);
 
 route::get("client",[ClientsController::class,"ShowSignup"]);
 route::post("signup",[ClientsController::class,"create"]);
+route::get("clientsList",[ClientsController::class,"ShowTable"]);

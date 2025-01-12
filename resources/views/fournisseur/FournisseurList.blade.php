@@ -1,6 +1,6 @@
 <div>
     <!-- An unexamined life is not worth living. - Socrates -->
-    {{ time() }}
+   
     <table border="1">
         <thead>
             <tr><th>First Name</th>

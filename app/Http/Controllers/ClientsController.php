@@ -30,6 +30,12 @@ class ClientsController extends Controller
             'email'=>$request->email,
             'sexe'=>$request->sexe
         ]);
+        return $this->ShowTable();
+    }
 
+    public function ShowTable(){
+        $Clients = Clients::all();
+
+        return view('ClientTable',['cls'=>$Clients]);
     }
 }
