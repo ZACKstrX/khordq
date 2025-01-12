@@ -17,7 +17,7 @@ class ClientsController extends Controller
         $request->validate([
             'first_name'=>'required|min:4',
             'last_name'=>'required|min:4',
-            'email'=>'required',    
+            'email'=>'required|email',    
             'class'=>'required',
             'birthday' => 'required|nullable|string',
             'sexe'=>'required'
