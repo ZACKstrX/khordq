@@ -49,6 +49,6 @@ class ClientsController extends Controller
             $Client->delete();
         }
         
-        $this->ShowTable();
+       return $this->ShowTable();
     }
 }
