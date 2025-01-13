@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\enum\SexeEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+ 
 
 class Clients extends Model
 {
@@ -16,4 +18,8 @@ class Clients extends Model
     'email'
 ];
     use HasFactory;
+
+    // protected $casts = [
+    //      'sexe' => SexeEnum::cases(),
+    // ];
 }

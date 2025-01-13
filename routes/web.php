@@ -5,6 +5,7 @@ use App\Http\Controllers\clientAuth;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\FournisseurController;
 use App\Http\Controllers\ResturantController;
+use App\Http\Controllers\TestController;
 use App\Models\Fournisseur;
 use App\Models\resturant;
 use Illuminate\Http\Request;
@@ -67,8 +68,6 @@ route::post("resturant",[ResturantController::class, "create"]);
 
 // })->name("resturant.Post");
 
-
-
 route::get("ThankYou",function(){
     return view('ThankYouView');
 });
@@ -80,3 +79,7 @@ route::get("FournisseurList",[FournisseurController::class,"showlist"]);
 route::get("client",[ClientsController::class,"ShowSignup"]);
 route::post("signup",[ClientsController::class,"create"]);
 route::get("clientsList",[ClientsController::class,"ShowTable"]);
+
+
+
+route::get("DeleteClient/{id}",[ClientsController::class, "delete"]);
