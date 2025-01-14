@@ -60,4 +60,28 @@ class ClientsController extends Controller
             return view('UpdateClient',['updatedinfo' => $Client]);
         }
     }
+    public function updating($id , Request $request){
+
+        $Client = Clients::find($id);
+        if ($Client){
+            
+            $request->validate([
+                'first_name' => 'required|min:4',
+                'last_name' => 'required|min:4',
+                'email' => 'required|email',
+                'class' => 'required',
+                'birthday' => 'required|string',
+                'sexe' => 'required'
+            ]);
+                $Client->first_name = $request->first_name;
+                $Client->last_name = $request->last_name;
+                $Client->birthday = $request->birthday;
+                $Client->class = $request->class;
+                $Client->email = $request->email;
+                $Client->sexe = $request->sexe;
+                $Client->save();
+            return view('ClientTable');
+        }
+
+    } 
 }
