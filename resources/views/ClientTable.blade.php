@@ -41,7 +41,7 @@
               </td>      
               <td >{{$client->email}}</td>    
               <td class="d-flex justify-content-around gap-2">
-                {{-- <a href="{{route()}}" class="btn btn-info ">Update</a>  --}}
+                <a href={{url("/UpdatingProcess/".$client->id) }} class="btn btn-info ">Update</a> 
                 <a href={{url("/DeleteClient/".$client->id) }} class="btn btn-danger">Delete</a></td>    
          </tr>
           @endforeach

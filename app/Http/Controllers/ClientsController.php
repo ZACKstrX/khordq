@@ -41,6 +41,7 @@ class ClientsController extends Controller
 
         return view('ClientTable', ['cls' => $Clients]);
     }
+    
     public function delete($id)
     {
         $Client = Clients::find($id);
@@ -50,5 +51,13 @@ class ClientsController extends Controller
         }
         
        return $this->ShowTable();
+    }
+
+    public function update($id)
+    {
+        $Client = Clients::find($id);
+        if ($Client != null) {
+            return view('UpdateClient',['updatedinfo' => $Client]);
+        }
     }
 }

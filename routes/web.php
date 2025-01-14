@@ -83,3 +83,6 @@ route::get("clientsList",[ClientsController::class,"ShowTable"]);
 
 
 route::get("DeleteClient/{id}",[ClientsController::class, "delete"]);
+
+route::get("UpdatingProcess/{id}",[ClientsController::class, "update"]);
+route::post("EditClient",[ClientsController::class, "updating"]);
