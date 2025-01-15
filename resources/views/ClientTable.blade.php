@@ -28,7 +28,7 @@
       <tbody class="table-group-divider">
           @foreach ($cls as $client )
           <tr>
-              <td  scope="row">{{$client->first_name}}</td>         
+              <td>{{$client->first_name}}</td>         
               <td>{{$client->last_name}}</td>         
               <td>{{$client->birthday}}</td>         
               <td>{{$client->class}}</td>         

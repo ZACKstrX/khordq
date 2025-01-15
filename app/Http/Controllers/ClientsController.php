@@ -60,9 +60,9 @@ class ClientsController extends Controller
             return view('UpdateClient',['updatedinfo' => $Client]);
         }
     }
-    public function updating($id , Request $request){
 
-        $Client = Clients::find($id);
+    public function updating( Request $request,$id){
+        $Client = Clients::findOrFail($id);
         if ($Client){
             
             $request->validate([
@@ -80,7 +80,8 @@ class ClientsController extends Controller
                 $Client->email = $request->email;
                 $Client->sexe = $request->sexe;
                 $Client->save();
-            return view('ClientTable');
+                $Client = Clients::all();
+                return view('ClientTable', ['cls' => $Client]);
         }
 
     } 

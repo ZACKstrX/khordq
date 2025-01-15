@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <form class="row g-3 needs-validation"  method="POST" action="{{ url('EditClient/'.$updatedinfo->id) }}">
+        <form class="row g-3 needs-validation"  method="POST" action="{{ url("EditClient/".$updatedinfo->id ) }}">
             @csrf
             <h1 class="col-md-4">Update The Client Information</h1>
             <div class="row g-3 d-flex gap-3">
