@@ -93,5 +93,5 @@ route::post("EditClient/{id}",[ClientsController::class, "updating"]);
 route::get("SignResturant",[ResturantController::class, "show"]);// gets the signing page
 route::post("resturants",[ResturantController::class, "create"])->name('resturant_store');//store the data to the DB
 route::get("resturant",[ResturantController::class,"list"])->name("resturant_list");//gets the resturants list 
-
+route::get("DeleteResturant/{id}", [ResturantController::class,"delete"]);
 //end

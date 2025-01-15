@@ -40,9 +40,13 @@ class ResturantController extends Controller
 
         return view("ResturantList",[
             "data" => $resturants,
-            // "zaki" => 'erewwww',
-            // "adil"=> 'sensai'
-
         ]);
+    }
+    public function delete($id){
+        $resturant = Resturant::find($id);
+        if ($resturant != null){
+            $resturant->delete();
+        }
+        return $this->list();
     }
 }
