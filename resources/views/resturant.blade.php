@@ -1,58 +1,78 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    </head>
-    <body >
-        <form method="POST" action="/resturant">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Dear Client</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <form class="row g-3 needs-validation" novalidate method="POST" action="/resturants">
             @csrf
-        <div class="mb-3 row">
-            <label  for="Resturant Name" class="col-sm-2 col-form-label">Resturant Name</label>
-            <div class="col-sm-10">
-              <input name="resturant_name" type="text" class="form-control" id="resturant_name">                
-            </div>
-        </div>
-            @error('resturant_name')
-            <span class ="text-danger">{{ $message }}</span>
-            @enderror
+            <h1 class="col-md-4">Your Resturant Information</h1>
+            <div class="row g-3 d-flex gap-3">
+                <div class="col-md-4">
+                    <label for="resturant_name" class="form-label">Resturant name :</label>
+                    <input name="resturant_name" type="text" class="form-control" id="resturant_name" placeholder="Resturant Name..." required>
+                   
+                    @error('resturant_name')
+                    <span class ="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
 
-        <div class="mb-3 row">
-            <label for="Speciality" class="col-sm-2 col-form-label">Speciality</label>
-            <div class="col-sm-10">
-              <input name='speciality' type="text" class="form-control" id="speciality">
-            </div>
-        </div>
-        @error('speciality')
-            <span class ="text-danger">{{ $message }}</span>
-            @enderror
 
-        <div class="mb-3 row">
-            <label for="Location" class="col-sm-2 col-form-label">Location</label>
-            <div class="col-sm-10">
-              <input name="location" type="text" class="form-control" id="location">
+                <div class="col-md-4">
+                    <label for="speciality" class="form-label">Speciality :</label>
+                    <input name="speciality" type="text" class="form-control" id="speciality" placeholder="Speciality..." required>
+            
+                    @error('speciality')
+                    <span class ="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
-          </div>
-          @error('email')
-            <span class ="text-danger">{{ $message }}</span>
-            @enderror
 
-          <div class="mb-3 row">
-            <label for="number" class="col-sm-2 col-form-label">Phone Number</label>
-            <div class="col-sm-10">
-              <input name="number" type="tel" class="form-control" id="number">
-            </div>
-        </div>
-        @error('number')
-        <span class ="text-danger">{{ $message }}</span>
-        @enderror
+            <div class="row g-3 d-flex gap-3">
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Email :</label>
+                    <div class="input-group has-validation">
+                        <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                    </div>
+                    @error('email')
+                    <span class ="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
 
-        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-    </form>
-    </body>
+                <div class="col-md-4">
+                  <label for="location" class="form-label">Location :</label>
+                  <input name="location" type="text" class="form-control" id="location" placeholder="location..." required>
+          
+                  @error('location')
+                  <span class ="text-danger">{{ $message }}</span>
+                  @enderror
+              </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="number" class="form-label">Number :</label>
+                    <input name="number" type="text" class="form-control" id="number" placeholder="number..." required>
+            
+                    @error('number')
+                    <span class ="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-dark" type="submit">Sign Up</button>
+                </div>
+            </div> 
+
+      </div>
+      
+        </form>
+    </div>
+    
+</body>
 </html>

@@ -73,16 +73,25 @@ route::get("ThankYou",function(){
 });
 
 route::get("ListResturant",[ResturantController::class ,"list"]);
-
 route::get("FournisseurList",[FournisseurController::class,"showlist"]);
 
+
+// Clients routs :
 route::get("client",[ClientsController::class,"ShowSignup"]);
 route::post("signup",[ClientsController::class,"create"]);
 route::get("clientsList",[ClientsController::class,"ShowTable"]);
-
-
 
 route::get("DeleteClient/{id}",[ClientsController::class, "delete"]);
 
 route::get("UpdatingProcess/{id}",[ClientsController::class, "update"]);
 route::post("EditClient/{id}",[ClientsController::class, "updating"]);
+// End
+
+
+
+//Resturants routs : 
+route::get("SignResturant",[ResturantController::class, "show"]);// gets the signing page
+route::post("resturants",[ResturantController::class, "create"])->name('resturant_store');//store the data to the DB
+route::get("resturant",[ResturantController::class,"list"])->name("resturant_list");//gets the resturants list 
+
+//end

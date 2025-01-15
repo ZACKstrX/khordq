@@ -5,6 +5,7 @@
         <thead>
             <tr><th>Restaurant Name</th>
                 <th>Speciality</th>
+                <th>Email</th>
                 <th>Location</th>
                 <th>Number</th></tr>
         </thead>
@@ -13,10 +14,9 @@
                 <tr>
                     <td>{{$resturant->resturant_name}}</td>
                     <td>{{$resturant->speciality}}</td>
+                    <td>{{$resturant->email}}</td>
                     <td>{{$resturant->location}}</td>
                     <td>{{$resturant->number}}</td>
-
-                    
                 </tr>
             @endforeach
         </tbody>

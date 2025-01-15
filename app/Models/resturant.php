@@ -11,6 +11,7 @@ class Resturant extends Model
 
         'resturant_name',
         'speciality',
+        'email',
         'location',
         'number'
     ];

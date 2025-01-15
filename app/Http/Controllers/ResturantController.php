@@ -22,19 +22,18 @@ class ResturantController extends Controller
             'number' => 'required'
         ]);
 
-        $resturant = resturant::create([
-            'resturant_name' => $request->resturant_name,
-            'speciality' => $request->speciality,
-            'location' => $request->location,
-            'number' => $request->number
-        ]);
+        $resturant = resturant::create($request->all());
         
+
+        // [
+        //     'resturant_name' => $request->resturant_name,
+        //     'speciality' => $request->speciality,
+        //     'location' => $request->location,
+        //     'number' => $request->number
+        // ]
         $resturants = resturant::all();
         
-        return view('ResturantList',[
-            "data" => $resturants,
-        ]);
-
+        return redirect()->route('resturant_list');
     }
     public function list(){
         $resturants = Resturant::all(); 
