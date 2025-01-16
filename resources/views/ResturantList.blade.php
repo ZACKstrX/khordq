@@ -15,28 +15,35 @@
 <div>
     <table class="table table-bordered border-black">
         <thead>
-            <tr><th  scope="col">Restaurant Name</th>
-                <th  scope="col">Speciality</th>
-                <th  scope="col">Email</th>
-                <th  scope="col">Location</th>
-                <th  scope="col">Number</th>
-                <th  scope="col">Operation</th></tr>
+            <tr>
+                <th scope="col">Restaurant Name</th>
+                <th scope="col">Speciality</th>
+                <th scope="col">Email</th>
+                <th scope="col">Location</th>
+                <th scope="col">Number</th>
+                <th scope="col">Operation</th>
+            </tr>
         </thead>
-        <tbody  class="table-group-divider">
+        <tbody class="table-group-divider">
             @foreach ($data as $resturant)
                 <tr>
-                    <td>{{$resturant->resturant_name}}</td>
-                    <td>{{$resturant->speciality}}</td>
-                    <td>{{$resturant->email}}</td>
-                    <td>{{$resturant->location}}</td>
-                    <td>{{$resturant->number}}</td>
+                    <td>{{ $resturant->resturant_name }}</td>
+                    <td>{{ $resturant->speciality }}</td>
+                    <td>{{ $resturant->email }}</td>
+                    <td>{{ $resturant->location }}</td>
+                    <td>{{ $resturant->number }}</td>
                     <td>
-                        <a href={{url("/DeleteResturant/".$resturant->id) }} class="btn btn-danger">Delete</a></td>
+                       
+                        <a href="{{ url('/UpdatingResturant/' . $resturant->id) }}" class="btn btn-secondary">Update</a>
+
+                       
+                        <a href="{{ url('/DeleteResturant/' . $resturant->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this restaurant?')">Delete</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
 </div>
+
 </body>
 </html>

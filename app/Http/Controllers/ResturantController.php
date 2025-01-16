@@ -49,4 +49,29 @@ class ResturantController extends Controller
         }
         return $this->list();
     }
+    public function update($id){
+        $resturant = Resturant::find($id);
+        if($resturant != null){
+            return view('UpdatingResturant',['updatedinfo'=>$resturant]);
+        }     
+    }
+
+
+
+    public function Edit(Request $request , $id){
+        $resturant = resturant::FindOrFail($id);
+        if($resturant){
+        $request->validate([
+            'resturant_name' => 'required',
+            'speciality' => 'required',
+            'location' => 'required',
+            'number' => 'required'
+        ]);
+        $resturant->update($request->all());
+        return $this->list();
+        // $resturant = resturant::create($request->all());
+
+     } 
+
+    }
 }
