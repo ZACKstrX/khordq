@@ -4,5 +4,5 @@ first project
  
 
  ```bash
- npm ZAKI
+ npm ZAKARIA
 ```
